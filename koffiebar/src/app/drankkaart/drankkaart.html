@@ -1,5 +1,12 @@
-<p>€0,90 Fanta</p>
-<p>€0,90 Cola</p>
-<p>€0,90 Sprite</p>
-<p>€0,90 Pepsi</p>
-<p>€1,00 Malt</p>
+<h2>Drankkaart</h2>
+<p>Alle prijzen incl. btw.</p>
+<ul>
+    @for (drank of dranken(); track drank.id) {
+        <app-drank-tegel 
+        [drank]="drank"
+        (besteld)="besteld.emit($event)">
+        </app-drank-tegel>
+    } @empty {
+        <li>Geen dranken</li>
+    }
+</ul>

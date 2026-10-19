@@ -1,0 +1,11 @@
+<div class="paneel">
+  <div class="paneel-hoofding">
+    <h2>{{ titel() }}</h2>
+    <ng-content select="[acties]"></ng-content>
+  </div>
+  
+  <div class="paneel-inhoud">
+    <!-- Hier komt alles te staan wat je tussen <app-paneel> en </app-paneel> typt! -->
+    <ng-content></ng-content>
+  </div>
+</div>

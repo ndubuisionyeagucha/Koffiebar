@@ -1,0 +1,23 @@
+<div class="bonnetje">
+    <h2>Jouw Bestelling</h2>
+
+    <ul>
+        @for (lijn of lijnen(); track lijn.drank.id) {
+            <li>
+                {{ lijn.aantal }}x {{ lijn.drank.naam }}
+                - € {{ lijn.aantal * lijn.drank.prijs }}
+            </li>
+        } @empty {
+            <li>Nog niets besteld.</li>
+        }
+    </ul>
+
+    <hr>
+    <p>Subtotaal: € {{ subtotaal().toFixed(2) }}</p>
+
+    @if (fooi() > 0) {
+        <p>Fooi (10%): € {{ fooi().toFixed(2) }}</p>
+    }
+
+    <h3>Totaal: € {{ totaal().toFixed(2) }}</h3>
+</div>

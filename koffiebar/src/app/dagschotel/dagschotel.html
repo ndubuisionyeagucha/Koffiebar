@@ -1,0 +1,18 @@
+<h3>Dagschotel: {{ gerecht }} <app-badge label="vandaag" kleur="rood" /></h3>
+<p>{{ aantal() }} mensen stemden al.</p>
+<ul>
+  @for (stem of stemmen(); track $index) {
+    <li>
+      {{ stem.naam }}
+      <input placeholder="opmerking">
+      <button type="button" (click)="verwijder(stem.id)">x</button>
+    </li>
+  }
+</ul>
+@if (open()) {
+  <input #naam placeholder="Jouw naam">
+  <button type="button" disabled="{{ !open() }}" (click)="stem(naam.value); naam.value = ''">Stem</button>
+  <button type="button" (click)="sluit">Stemming sluiten</button>
+} @else {
+  <p>De stemming is gesloten.</p>
+}

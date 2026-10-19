@@ -1,0 +1,9 @@
+<li [class.uitverkocht]="!drank().beschikbaar">{{drank().naam}} - € {{drank().prijs}}
+    @if (drank().vegan) {
+        <app-badge kleur="groen" label="vegan"/>
+    }
+    @if (drank().nieuw) {
+        <app-badge kleur="rood" label="nieuw"/>
+    }
+</li>
+<button [disabled]="!drank().beschikbaar" (click)="besteld.emit(drank())">Bestel</button>

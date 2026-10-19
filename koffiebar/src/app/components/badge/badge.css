@@ -1,0 +1,19 @@
+.grijs {
+    background-color: gray;
+}
+
+.rood {
+    background-color: red;
+}
+
+.groen {
+    background-color: green;
+}
+
+.badge {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+}

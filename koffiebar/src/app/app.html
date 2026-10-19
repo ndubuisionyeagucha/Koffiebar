@@ -1,5 +1,18 @@
-<app-hoofding />
-<app-drankkaart />
-<app-voettekst />
-<app-bestelknop />
-<router-outlet />
+<app-hoofding [aantal]="aantalDrankjes()"></app-hoofding>
+
+<input type="text" placeholder="Zoek een drankje..." [(ngModel)]="zoekterm">
+<p>{{ zichtbaar().length }} van de 15 dranken</p>
+
+<app-paneel titel="De Kaart">
+    <app-filterbalk acties [(keuze)]="gekozenCategorie"></app-filterbalk>
+    <!-- Alles wat hier staat, valt in de <ng-content> van het paneel -->
+    <app-drankkaart 
+      [dranken]="zichtbaar()" 
+      (besteld)="bestel($event)">
+    </app-drankkaart>
+</app-paneel>
+
+<!-- Paneel 2: Het Bonnetje -->
+<app-paneel titel="Jouw Bestelling">
+    <app-bonnetje [lijnen]="bestelling()"></app-bonnetje>
+</app-paneel>

@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, signal, output, input } from '@angular/core';
+import { Drank, DRANKEN } from '../dranken';
+import { DrankTegel } from '../drank-tegel/drank-tegel';
 
 @Component({
-  imports: [],
+  imports: [DrankTegel],
   selector: 'app-drankkaart',
   styleUrl: './drankkaart.css',
   templateUrl: './drankkaart.html',
 })
-export class Drankkaart {}
+export class Drankkaart {
+  dranken = input.required<Drank[]>()
+  besteld = output<Drank>();
+}

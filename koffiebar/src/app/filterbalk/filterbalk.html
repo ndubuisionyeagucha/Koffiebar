@@ -1,0 +1,8 @@
+<div class="filters">
+  <!-- Als er geklikt wordt, updaten we het model. Als het model gelijk is aan deze knop, krijgt hij de klasse 'actief' -->
+  <button [class.actief]="keuze() === 'alle'" (click)="keuze.set('alle')">Alle</button>
+  <button [class.actief]="keuze() === 'koffie'" (click)="keuze.set('koffie')">Koffie</button>
+  <button [class.actief]="keuze() === 'thee'" (click)="keuze.set('thee')">Thee</button>
+  <button [class.actief]="keuze() === 'fris'" (click)="keuze.set('fris')">Fris</button>
+  <button [class.actief]="keuze() === 'gebak'" (click)="keuze.set('gebak')">Gebak</button>
+</div>
